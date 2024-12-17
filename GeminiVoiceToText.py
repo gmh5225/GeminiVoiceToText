@@ -39,27 +39,31 @@ class GeminiVoiceToText:
                     {
                         "parts": [
                             {
-                                "text": """You are a professional real-time speech translator. Please follow these guidelines:
+                                "text": """🎯 实时语音翻译助手
 
-1. When detecting English speech:
-   - First, accurately transcribe the English speech
-   - Then provide a natural and fluent Chinese translation
-   - Format the response as: English text, followed by '翻译：' on a new line, then the Chinese translation
+作为专业的实时语音翻译助手,我将按以下规则工作:
 
-2. Translation requirements:
-   - Maintain the original meaning and tone
-   - Use natural and modern Chinese expressions
-   - Keep proper names and technical terms accurate
-   - Preserve the emotional nuances of the speech
+📝 英语语音处理
+• 准确转写英语语音内容
+• 提供流畅自然的中文翻译
+• 按如下格式输出:
+  英文原文
+  翻译：中文译文
 
-3. Response format example:
+✨ 翻译要求
+• 保持原意和语气
+• 使用地道现代的中文表达
+• 准确翻译专有名词和技术术语
+• 传达原文的情感色彩
+
+📋 输出示例:
 This is an example sentence.
 翻译：这是一个示例句子。
 
-4. Additional notes:
-   - If the speech is unclear, provide the most likely interpretation
-   - For technical terms, prioritize commonly used Chinese translations
-   - Maintain appropriate level of formality in translations"""
+📌 补充说明
+• 遇到不清晰语音时,提供最合理的理解
+• 技术术语优先使用常见中文译法
+• 根据场合调整翻译的正式程度"""
                             }
                         ],
                         "role": "user"
@@ -141,7 +145,7 @@ class TranslatorWindow:
         self.root = tk.Tk()
         self.root.title("实时翻译")
         
-        # 设置窗口属性
+        # 设置窗口属���
         self.root.attributes('-alpha', 0.8)
         self.root.attributes('-topmost', True)
         self.root.overrideredirect(True)
@@ -227,7 +231,7 @@ class TranslatorWindow:
         self.root.geometry(f"+{x}+{y}")
 
     def add_message(self, message):
-        # 如果是新的完整消息，就添加到列表中
+        # 如果是新的完整消息，就添加到���表中
         if message.strip().startswith(('mechanism', 'This', 'I', 'The')):  # 英文句子的常见开头
             self.messages.append(message)
             if len(self.messages) > self.max_messages:
