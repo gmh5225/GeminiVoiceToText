@@ -82,7 +82,7 @@ This is an example sentence.
         # 发送系统指令
         await self.ws.send(json.dumps(self.system_instruction))
         await self.ws.recv()
-        print("已连接到 Gemini。您现在可以开始说话...")
+        print("已连接到 Gemini")
 
         # 同时运行音频发送和响应接收
         async with asyncio.TaskGroup() as tg:
