@@ -231,7 +231,7 @@ class TranslatorWindow:
         self.root.geometry(f"+{x}+{y}")
 
     def add_message(self, message):
-        # 如果是新的完整消息，就添加到���表中
+        # 如果是新的完整消息，就添加到表中
         if message.strip().startswith(('mechanism', 'This', 'I', 'The')):  # 英文句子的常见开头
             self.messages.append(message)
             if len(self.messages) > self.max_messages:
